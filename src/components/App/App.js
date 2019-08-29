@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Header from '../Header/Header';
 
 class App extends Component {
   render() {
     return (
       <div id="wrapper">
-        <div id="header">
-          <img src="template/img/banner.png" alt="Sản phẩm" />
-        </div>
+        <Header />
         <div id="menu">
           <ul>
             <li><a href="#" title>Trang Chủ</a></li>
