@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 class Product extends Component {
     render() {
+        console.log(this.props);
+
         return (
             <div className="col-xs-12 col-md-6">
                 {/* First product box start here*/}
