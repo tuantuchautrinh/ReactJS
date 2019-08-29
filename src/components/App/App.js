@@ -6,7 +6,14 @@ import Product from '../Product/Product';
 function App() {
   return (
     <div className="App">
-      <Product />
+      <div class="container">
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+      </div>
     </div>
   );
 }
