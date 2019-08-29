@@ -9,20 +9,20 @@ class Product extends Component {
                     <div className="row">
                         <div className="col-md-5 col-sm-12 col-xs-12">
                             <div className="product-image"> 
-                            <img src="images/products/p4.png" className="img-responsive" /> 
-                            <span className="tag2 hot">
-                                HOT
-                            </span> 
+                                <img src="images/products/p4.png" alt="" className="img-responsive" /> 
+                                <span className="tag2 hot">
+                                    HOT
+                                </span> 
                             </div>
                         </div>
                         <div className="col-md-7 col-sm-12 col-xs-12">
                             <div className="product-deatil">
                                 <h5 className="name">
-                                    <a href="#">
-                                    Product Code/Name here
+                                    <a href="">
+                                        Product Code/Name here
                                     </a>
-                                    <a href="#">
-                                    <span>Product Category</span>
+                                    <a href="">
+                                        <span>Product Category</span>
                                     </a>                            
                                 </h5>
                                 <p className="price-container">
