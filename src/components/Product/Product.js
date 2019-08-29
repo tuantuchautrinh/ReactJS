@@ -11,6 +11,10 @@ class Product extends Component {
         return price.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
     }
 
+    show_info = () => {
+        alert('Hello World');
+    }
+
     render() {
         return (
             <div className="col-xs-12 col-md-6">
@@ -45,7 +49,7 @@ class Product extends Component {
                                 <div className="row">
                                     <div className="col-md-12"> 
                                         <a data-toggle="modal" data-target="#myModal" className="btn btn-danger">Add to cart</a>
-                                        <a data-toggle="modal" data-target="#myModal" className="btn btn-info">More info</a>
+                                        <a onClick={ this.show_info } className="btn btn-info">More info</a>
                                     </div>
                                     <div className="col-md-12">
                                         <div className="rating">Rating:
