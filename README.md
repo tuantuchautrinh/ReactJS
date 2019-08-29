@@ -66,3 +66,9 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## npm start error with create-react-app
+
+### 1.`npm install -g npm@latest to update npm because it is sometimes buggy.`
+### 2.`rm -rf node_modules to remove the existing modules.`
+### 3.`npm install to re-install the project dependencies.`
