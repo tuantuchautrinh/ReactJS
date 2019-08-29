@@ -7,6 +7,10 @@ class Product extends Component {
         }
     }
 
+    format_curency(price) {
+        return price.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
+    }
+
     render() {
         return (
             <div className="col-xs-12 col-md-6">
@@ -30,7 +34,7 @@ class Product extends Component {
                                     </a>                            
                                 </h5>
                                 <p className="price-container">
-                                    <span>{ this.props.price }</span>
+                                    <span>{ this.format_curency(this.props.price) }</span>
                                 </p>
                                 <span className="tag1" /> 
                             </div>
