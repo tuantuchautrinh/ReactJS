@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Product extends Component {
     render() {
-        console.log(this.props);
+        console.log(this.props.ten);
 
         return (
             <div className="col-xs-12 col-md-6">
