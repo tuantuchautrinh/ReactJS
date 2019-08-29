@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Product extends Component {
     show_featured = (featured) => {
-        if (featured == true) {
+        if (featured === true) {
             return <span className="tag2 hot">HOT</span>;
         }
     }
@@ -16,7 +16,7 @@ class Product extends Component {
                         <div className="col-md-5 col-sm-12 col-xs-12">
                             <div className="product-image"> 
                                 <img src={ this.props.images } alt="" className="img-responsive" /> 
-                                { this.props.hot }
+                                    { this.show_featured(this.props.hot) }
                             </div>
                         </div>
                         <div className="col-md-7 col-sm-12 col-xs-12">
