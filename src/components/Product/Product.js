@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 
 class Product extends Component {
+    show_featured = (featured) => {
+        if (featured == true) {
+            return <span className="tag2 hot">HOT</span>;
+        }
+    }
+
     render() {
         return (
             <div className="col-xs-12 col-md-6">
@@ -9,24 +15,22 @@ class Product extends Component {
                     <div className="row">
                         <div className="col-md-5 col-sm-12 col-xs-12">
                             <div className="product-image"> 
-                                <img src="images/products/p4.png" alt="" className="img-responsive" /> 
-                                <span className="tag2 hot">
-                                    HOT
-                                </span> 
+                                <img src={ this.props.images } alt="" className="img-responsive" /> 
+                                { this.props.hot }
                             </div>
                         </div>
                         <div className="col-md-7 col-sm-12 col-xs-12">
                             <div className="product-deatil">
                                 <h5 className="name">
                                     <a href="">
-                                    { this.props.ten }
+                                        { this.props.children }
                                     </a>
                                     <a href="">
                                         <span>Product Category</span>
                                     </a>                            
                                 </h5>
                                 <p className="price-container">
-                                    <span>$199</span>
+                                    <span>{ this.props.price }</span>
                                 </p>
                                 <span className="tag1" /> 
                             </div>
