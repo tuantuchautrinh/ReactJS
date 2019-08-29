@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 
 class Product extends Component {
     render() {
-        console.log(this.props.ten);
-
         return (
             <div className="col-xs-12 col-md-6">
                 {/* First product box start here*/}
@@ -21,7 +19,7 @@ class Product extends Component {
                             <div className="product-deatil">
                                 <h5 className="name">
                                     <a href="">
-                                        Product Code/Name here
+                                    { this.props.ten }
                                     </a>
                                     <a href="">
                                         <span>Product Category</span>
