@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 
 class Product extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            editing : false
+        };
+    }
+
     show_featured = (featured) => {
         if (featured === true) {
             return <span className="tag2 hot">HOT</span>;
@@ -13,6 +20,42 @@ class Product extends Component {
 
     show_info = (msg) => {
         alert(msg);
+    }
+
+    buttonEdit = () => {
+        this.setState({ editing: true });
+    }
+
+    buttonSave = () => {
+        this.setState({ editing: false});
+    }
+
+    renderNormal = () => {
+        return  <div className="col-md-12 product-info smart-form" style={{ marginTop : 10 }}> 
+                    <div className="form-group">
+                        <button className="btn btn-info" onClick={ () => this.buttonEdit() }>Edit</button>
+                        <button className="btn btn-danger">Remove</button>
+                    </div>
+                </div>
+    }
+
+    renderForm = () => {
+        return  <div className="col-md-12 product-info smart-form" style={{ marginTop : 10 }}>
+                    <div className="form-group">
+                        <input type="text" className="form-control" id="usr" /> 
+                    </div>
+                    <div className="form-group">
+                        <button className="btn btn-info" onClick={ () => this.buttonSave() }>Save</button>
+                    </div>
+                </div>
+    }
+
+    show_button = () => {
+        if(this.state.editing === false) {
+            return this.renderNormal();
+        } else {
+            return this.renderForm();
+        }
     }
 
     render() {
@@ -62,6 +105,14 @@ class Product extends Component {
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <div className="col-md-12 product-info smart-form" style={{ marginTop : 10 }}>
+                        <div className="form-group">
+                            { this.show_button() }
                         </div>
                     </div>
                 </div>
