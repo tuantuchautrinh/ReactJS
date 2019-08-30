@@ -51,8 +51,8 @@ class App extends Component {
   }
 
   show_product = () => {
-    const listProduct = this.state.products.map((item) =>
-      <Product price={ item.price } images={ item.images } hot={true}>{ item.name }</Product>
+    const listProduct = this.state.products.map((item, index) =>
+      <Product key={index} price={ item.price } images={ item.images } hot={true}>{ item.name }</Product>
     );
 
     return listProduct;
