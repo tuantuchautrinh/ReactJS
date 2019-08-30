@@ -28,15 +28,18 @@ class Product extends Component {
 
     buttonSave = () => {
         this.setState({ editing: false});
+        this.props.edit(this.props.index, this.txtName.value);
+    }
 
-        console.log(this.txtName.value);
+    buttonDelete = () => {
+        this.props.delete(this.props.index);
     }
 
     renderNormal = () => {
         return  <div className="col-md-12 product-info smart-form" style={{ marginTop : 10 }}> 
                     <div className="form-group">
                         <button className="btn btn-info" onClick={ () => this.buttonEdit() }>Edit</button>
-                        <button className="btn btn-danger">Remove</button>
+                        <button className="btn btn-danger" onClick={ () => this.buttonDelete() }>Remove</button>
                     </div>
                 </div>
     }

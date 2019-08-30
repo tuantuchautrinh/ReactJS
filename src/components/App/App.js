@@ -50,9 +50,17 @@ class App extends Component {
     };
   }
 
+  deleteProduct = (id) => {
+    console.log("Xoá sản phẩm có ID: " + id);
+  }
+
+  editNameProduct = (id, name) => {
+    console.log("Cập nhật sản phẩm có ID: " + id + " có tên " + name);
+  }
+
   show_product = () => {
     const listProduct = this.state.products.map((item, index) =>
-      <Product key={index} price={ item.price } images={ item.images } hot={true}>{ item.name }</Product>
+      <Product key={index} index={index} price={ item.price } edit={ (id, name) => this.editNameProduct(id, name) } delete={ (id) => this.deleteProduct(id) } images={ item.images } hot={true}>{ item.name }</Product>
     );
 
     return listProduct;
