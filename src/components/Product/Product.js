@@ -42,7 +42,7 @@ class Product extends Component {
     renderForm = () => {
         return  <div className="col-md-12 product-info smart-form" style={{ marginTop : 10 }}>
                     <div className="form-group">
-                        <input type="text" className="form-control" id="usr" /> 
+                        <input defaultValue={ this.props.children } type="text" className="form-control" id="usr" /> 
                     </div>
                     <div className="form-group">
                         <button className="btn btn-info" onClick={ () => this.buttonSave() }>Save</button>
