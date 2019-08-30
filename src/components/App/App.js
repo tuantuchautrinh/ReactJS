@@ -51,11 +51,15 @@ class App extends Component {
   }
 
   deleteProduct = (id) => {
-    console.log("Xoá sản phẩm có ID: " + id);
+    var arrProduct = this.state.products;
+    arrProduct.splice(id, 1);
+    this.setState({ products : arrProduct });
   }
 
   editNameProduct = (id, name) => {
-    console.log("Cập nhật sản phẩm có ID: " + id + " có tên " + name);
+    var arrProduct = this.state.products;
+    arrProduct[id].name = name;
+    this.setState({ products : arrProduct });
   }
 
   show_product = () => {
