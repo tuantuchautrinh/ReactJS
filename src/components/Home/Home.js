@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Course from './Course';
 
 class Home extends Component {
     render() {
@@ -13,42 +14,12 @@ class Home extends Component {
                         <p>Khóa học lập trình ReactJS tại QuocTuan.Info.</p>
                     </div>
                     <div className="row">
-                        <div className="col-xs-6 col-lg-4">
-                            <h2>Lập Trình ReactJS</h2>
-                            <p>Khóa học lập trình Website bằng PHP &amp; MySQL chỉ cung cấp cho bạn các kiến thức là chính.Kết thúc khóa học lập trình website PHP &amp; MySQL cơ bản chúng tôi sẽ KHÔNG cung cấp chứng chỉ cho bạn như tham gia các khóa học lập trình website bằng PHP &amp; MySQL cơ bản ở trung tâm.</p>
-                            <p><a className="btn btn-default" href="" role="button">Chi tiết »</a></p>
-                        </div>
-                        {/*/.col-xs-6.col-lg-4*/}
-                        <div className="col-xs-6 col-lg-4">
-                            <h2>Lập Trình NodeJS</h2>
-                            <p>Khóa học lập trình Website bằng PHP &amp; MySQL chỉ cung cấp cho bạn các kiến thức là chính.Kết thúc khóa học lập trình website PHP &amp; MySQL cơ bản chúng tôi sẽ KHÔNG cung cấp chứng chỉ cho bạn như tham gia các khóa học lập trình website bằng PHP &amp; MySQL cơ bản ở trung tâm.</p>
-                            <p><a className="btn btn-default" href="" role="button">Chi tiết »</a></p>
-                        </div>
-                        {/*/.col-xs-6.col-lg-4*/}
-                        <div className="col-xs-6 col-lg-4">
-                            <h2>Lập Trình Angular</h2>
-                            <p>Khóa học lập trình Website bằng PHP &amp; MySQL chỉ cung cấp cho bạn các kiến thức là chính.Kết thúc khóa học lập trình website PHP &amp; MySQL cơ bản chúng tôi sẽ KHÔNG cung cấp chứng chỉ cho bạn như tham gia các khóa học lập trình website bằng PHP &amp; MySQL cơ bản ở trung tâm.</p>
-                            <p><a className="btn btn-default" href="" role="button">Chi tiết »</a></p>
-                        </div>
-                        {/*/.col-xs-6.col-lg-4*/}
-                        <div className="col-xs-6 col-lg-4">
-                            <h2>Lập Trình PHP</h2>
-                            <p>Khóa học lập trình Website bằng PHP &amp; MySQL chỉ cung cấp cho bạn các kiến thức là chính.Kết thúc khóa học lập trình website PHP &amp; MySQL cơ bản chúng tôi sẽ KHÔNG cung cấp chứng chỉ cho bạn như tham gia các khóa học lập trình website bằng PHP &amp; MySQL cơ bản ở trung tâm.</p>
-                            <p><a className="btn btn-default" href="" role="button">Chi tiết »</a></p>
-                        </div>
-                        {/*/.col-xs-6.col-lg-4*/}
-                        <div className="col-xs-6 col-lg-4">
-                            <h2>Lập Trình Python</h2>
-                            <p>Khóa học lập trình Website bằng PHP &amp; MySQL chỉ cung cấp cho bạn các kiến thức là chính.Kết thúc khóa học lập trình website PHP &amp; MySQL cơ bản chúng tôi sẽ KHÔNG cung cấp chứng chỉ cho bạn như tham gia các khóa học lập trình website bằng PHP &amp; MySQL cơ bản ở trung tâm.</p>
-                            <p><a className="btn btn-default" href="" role="button">Chi tiết »</a></p>
-                        </div>
-                        {/*/.col-xs-6.col-lg-4*/}
-                        <div className="col-xs-6 col-lg-4">
-                            <h2>Lập Trình Android</h2>
-                            <p>Khóa học lập trình Website bằng PHP &amp; MySQL chỉ cung cấp cho bạn các kiến thức là chính.Kết thúc khóa học lập trình website PHP &amp; MySQL cơ bản chúng tôi sẽ KHÔNG cung cấp chứng chỉ cho bạn như tham gia các khóa học lập trình website bằng PHP &amp; MySQL cơ bản ở trung tâm.</p>
-                            <p><a className="btn btn-default" href="" role="button">Chi tiết »</a></p>
-                        </div>
-                        {/*/.col-xs-6.col-lg-4*/}
+                        <Course>Lập trình PHP</Course>
+                        <Course>Lập trình ASP</Course>
+                        <Course>Lập trình Java</Course>
+                        <Course>Lập trình Python</Course>
+                        <Course>Lập trình Android</Course>
+                        <Course>Lập trình Angular</Course>
                     </div>
                     {/*/row*/}
                 </div>
