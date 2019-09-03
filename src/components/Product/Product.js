@@ -14,6 +14,7 @@ class Product extends Component {
         }
     }
 
+<<<<<<< HEAD
     format_curency(price) {
         return price.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
     }
@@ -63,6 +64,8 @@ class Product extends Component {
         }
     }
 
+=======
+>>>>>>> parent of c0f16f8... add fuction dinh-dang-tien-phan-cach-hang-ngan http://laptrinhphp.info/JavaScript/javascript-dinh-dang-tien-phan-cach-phan-ngan.html
     render() {
         return (
             <div className="col-xs-12 col-md-6">
@@ -86,7 +89,7 @@ class Product extends Component {
                                     </a>                            
                                 </h5>
                                 <p className="price-container">
-                                    <span>{ this.format_curency(this.props.price) }</span>
+                                    <span>{ this.props.price }</span>
                                 </p>
                                 <span className="tag1" /> 
                             </div>
