@@ -2,12 +2,16 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Prompt } from "react-router-dom";
 
 class Contact extends Component {
-constructor(props) {
-    super(props);
-    this.state = {
-        isBlocking : true
-    };
-}
+    constructor(props) {
+        super(props);
+        this.state = {
+            isBlocking : true
+        };
+    }
+
+    isInputChange = (event) => {
+        console.log(event.target.value.length > 0);
+    }
 
     render() {
         return (
@@ -26,7 +30,7 @@ constructor(props) {
                         <h4><strong>Get in Touch</strong></h4>
                         <form>
                             <div className="form-group">
-                                <input type="text" className="form-control" placeholder="Name" />
+                                <input type="text" className="form-control" placeholder="Name" onChange = { (event) => this.isInputChange(event) } />
                             </div>
                             <div className="form-group">
                                 <input type="email" className="form-control" placeholder="E-mail" />
