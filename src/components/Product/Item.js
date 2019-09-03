@@ -41,12 +41,12 @@ class Item extends Component {
                             { this.props.children }
                         </h4>
                         <p className="group inner list-group-item-text">
-                        Khóa học lập trình Website bằng PHP &amp; MySQL chỉ cung cấp cho bạn các kiến thức là chính.Kết thúc khóa học lập trình website PHP &amp; MySQL cơ bản chúng tôi sẽ KHÔNG cung cấp chứng chỉ cho bạn như tham gia các khóa học lập trình website bằng PHP &amp; MySQL cơ bản ở trung tâm.
+                            Khóa học lập trình Website bằng PHP &amp; MySQL chỉ cung cấp cho bạn các kiến thức là chính.Kết thúc khóa học lập trình website PHP &amp; MySQL cơ bản chúng tôi sẽ KHÔNG cung cấp chứng chỉ cho bạn như tham gia các khóa học lập trình website bằng PHP &amp; MySQL cơ bản ở trung tâm.
                         </p>
                         <div className="row">
                             <div className="col-xs-12 col-md-8">
                                 <p className="lead">
-                                { this.props.price } VNĐ
+                                    { this.props.price } VNĐ
                                 </p>
                             </div>
                             <div className="col-xs-12 col-md-4">

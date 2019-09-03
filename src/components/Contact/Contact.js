@@ -5,12 +5,14 @@ class Contact extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isBlocking : true
+            isBlocking : false
         };
     }
 
     isInputChange = (event) => {
-        console.log(event.target.value.length > 0);
+        this.setState({
+            isBlocking : event.target.value.length > 0
+        });
     }
 
     render() {
@@ -33,13 +35,13 @@ class Contact extends Component {
                                 <input type="text" className="form-control" placeholder="Name" onChange = { (event) => this.isInputChange(event) } />
                             </div>
                             <div className="form-group">
-                                <input type="email" className="form-control" placeholder="E-mail" />
+                                <input type="email" className="form-control" placeholder="E-mail" onChange = { (event) => this.isInputChange(event) } />
                             </div>
                             <div className="form-group">
-                                <input type="tel" className="form-control" placeholder="Phone" />
+                                <input type="tel" className="form-control" placeholder="Phone" onChange = { (event) => this.isInputChange(event) } />
                             </div>
                             <div className="form-group">
-                                <textarea className="form-control" rows={3} placeholder="Message" defaultValue={""} />
+                                <textarea className="form-control" rows={3} placeholder="Message" defaultValue={""} onChange = { (event) => this.isInputChange(event) } />
                             </div>
                             <button className="btn btn-default" type="submit" name="button">
                                 <i className="fa fa-paper-plane-o" aria-hidden="true" /> Submit
