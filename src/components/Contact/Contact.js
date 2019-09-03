@@ -1,9 +1,20 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link, Prompt } from "react-router-dom";
 
 class Contact extends Component {
+constructor(props) {
+    super(props);
+    this.state = {
+        isBlocking : true
+    };
+}
+
     render() {
         return (
             <div>
+                <Prompt
+                    when = {this.state.isBlocking}
+                    message = {location => `Are you sure you want to go to ${location.pathname}` } />
                 <div className="well well-sm">
                     <h3><strong>Liên Hệ</strong></h3>
                 </div>
