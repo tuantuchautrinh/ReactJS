@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, Prompt } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Prompt, Redirect } from "react-router-dom";
 
 class Contact extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isBlocking : false
+            isBlocking : false,
+            isRedirect : false
         };
     }
 
@@ -19,11 +20,17 @@ class Contact extends Component {
         event.preventDefault();
             event.target.reset();
             this.setState({
-            isBlocking: false
+            isBlocking : false,
+            isRedirect : true
         });
     }
 
     render() {
+        if(this.state.isRedirect) {
+            return (
+                <Redirect to="/trang-chu" />
+            )
+        }
         return (
             <div>
                 <Prompt
