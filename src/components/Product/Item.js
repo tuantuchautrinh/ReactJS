@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 class Item extends Component {
     to_slug = (str) => {
@@ -34,7 +35,7 @@ class Item extends Component {
         return (
             <div className="item  col-xs-4 col-lg-4">
                 <div className="thumbnail">
-                    <img className="group list-group-image" src="" alt="" />
+                    <img className="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
                     <div className="caption">
                         <h4 className="group inner list-group-item-heading">
                             { this.props.children }
@@ -49,7 +50,7 @@ class Item extends Component {
                                 </p>
                             </div>
                             <div className="col-xs-12 col-md-4">
-                                <a className="btn btn-success" href={ "chi-tiet/" + this.props.pid + "/" + this.to_slug(this.props.children) + ".html" }>Chi tiết</a>
+                                <Link className="btn btn-success" to={ "chi-tiet/" + this.props.pid + "/" + this.to_slug(this.props.children) + ".html" }>Chi tiết</Link>
                             </div>
                         </div>
                     </div>
