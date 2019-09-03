@@ -15,6 +15,14 @@ class Contact extends Component {
         });
     }
 
+    submitForm = (event) => {
+        event.preventDefault();
+            event.target.reset();
+            this.setState({
+            isBlocking: false
+        });
+    }
+
     render() {
         return (
             <div>
@@ -30,7 +38,7 @@ class Contact extends Component {
                     </div>
                     <div className="col-md-5">
                         <h4><strong>Get in Touch</strong></h4>
-                        <form>
+                        <form onSubmit = { (event) => this.submitForm(event) }>
                             <div className="form-group">
                                 <input type="text" className="form-control" placeholder="Name" onChange = { (event) => this.isInputChange(event) } />
                             </div>
