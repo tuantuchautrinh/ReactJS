@@ -30,7 +30,7 @@ class App extends Component {
         <div className="container">
           <Nav />
           <div className="row">
-            <Table formToogle={ (event) => this.changeStatusForm(event) } />
+            <Table statusForm={ this.state.statusForm } formToogle={ (event) => this.changeStatusForm(event) } />
             { this.showForm() }
           </div>
         </div>
