@@ -6,23 +6,37 @@ class Contact extends Component {
         super(props);
         this.state = {
             isBlocking : false,
-            isRedirect : false
+            isRedirect : false,
         };
     }
 
     isInputChange = (event) => {
+        const target = event.target;
+
+        const name = target.name;
+        const value = target.value;
+
         this.setState({
-            isBlocking : event.target.value.length > 0
+            isBlocking : target.value.length > 0,
+            [name] : value
         });
     }
 
     submitForm = (event) => {
         event.preventDefault();
-            event.target.reset();
-            this.setState({
+        event.target.reset();
+        this.setState({
             isBlocking : false,
-            isRedirect : true
+            isRedirect : false
         });
+
+        var content = '';
+        content += 'Họ tên : ' + this.state.txtName;
+        content += ' - Email : ' + this.state.txtEmail;
+        content += ' - Phone : ' + this.state.txtPhone;
+        content += ' - Message : ' + this.state.txtMessage;
+
+        console.log(content);
     }
 
     render() {
@@ -47,16 +61,16 @@ class Contact extends Component {
                         <h4><strong>Get in Touch</strong></h4>
                         <form onSubmit = { (event) => this.submitForm(event) }>
                             <div className="form-group">
-                                <input type="text" className="form-control" placeholder="Name" onChange = { (event) => this.isInputChange(event) } />
+                                <input type="text" name="txtName" className="form-control" placeholder="Name" onChange = { (event) => this.isInputChange(event) } />
                             </div>
                             <div className="form-group">
-                                <input type="email" className="form-control" placeholder="E-mail" onChange = { (event) => this.isInputChange(event) } />
+                                <input type="email" name="txtEmail" className="form-control" placeholder="E-mail" onChange = { (event) => this.isInputChange(event) } />
                             </div>
                             <div className="form-group">
-                                <input type="tel" className="form-control" placeholder="Phone" onChange = { (event) => this.isInputChange(event) } />
+                                <input type="tel" name="txtPhone" placeholder="Phone" onChange = { (event) => this.isInputChange(event) } />
                             </div>
                             <div className="form-group">
-                                <textarea className="form-control" rows={3} placeholder="Message" defaultValue={""} onChange = { (event) => this.isInputChange(event) } />
+                                <textarea name="txtMessage" rows={3} placeholder="Message" defaultValue={""} onChange = { (event) => this.isInputChange(event) } />
                             </div>
                             <button className="btn btn-default" type="submit" name="button">
                                 <i className="fa fa-paper-plane-o" aria-hidden="true" /> Submit
