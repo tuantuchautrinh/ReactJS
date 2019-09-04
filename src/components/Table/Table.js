@@ -2,6 +2,21 @@ import React, { Component } from 'react';
 import TableRow from './TableRow';
 
 class Table extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            statusButton : true
+        };
+    }
+    
+    showButton = () => {
+        if(this.state.statusButton) {
+            return <a className="btn btn-success btn-sm" href="them" role="button" onClick={ (event) => this.props.formToogle(event) } ><i className="fa fa-plus" aria-hidden="true" /> Thêm</a>
+        } else {
+            return <a className="btn btn-danger btn-sm" href="dong" role="button"  ><i className="fa fa-close" aria-hidden="true" /> Đóng</a>
+        }
+    }
+
     render() {
         return (
             <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8">
@@ -12,8 +27,7 @@ class Table extends Component {
                             <th>Thành Viên</th>
                             <th>Quyền</th>
                             <th className="text-center" colSpan={2}>
-                                <a className="btn btn-success btn-sm" href="them" role="button"><i className="fa fa-plus" aria-hidden="true" /> Thêm</a>
-                                <a className="btn btn-danger btn-sm" href="dong" role="button"><i className="fa fa-close" aria-hidden="true" /> Đóng</a>
+                                { this.showButton() }
                             </th>
                         </tr>
                     </thead>
