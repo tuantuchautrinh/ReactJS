@@ -7,6 +7,11 @@ class Contact extends Component {
         this.state = {
             isBlocking : false,
             isRedirect : false,
+            txtName : '',
+            txtEmail : '',
+            txtPhone : '',
+            txtMessage : '',
+            sltCity : ''
         };
     }
 
@@ -35,6 +40,7 @@ class Contact extends Component {
         content += ' - Email : ' + this.state.txtEmail;
         content += ' - Phone : ' + this.state.txtPhone;
         content += ' - Message : ' + this.state.txtMessage;
+        content += ' - City : ' + this.state.sltCity;
 
         console.log(content);
     }
@@ -61,16 +67,40 @@ class Contact extends Component {
                         <h4><strong>Get in Touch</strong></h4>
                         <form onSubmit = { (event) => this.submitForm(event) }>
                             <div className="form-group">
-                                <input type="text" name="txtName" className="form-control" placeholder="Name" onChange = { (event) => this.isInputChange(event) } />
+                                <input type="text" name="txtName" value={this.state.txtName} className="form-control" placeholder="Name" onChange = { (event) => this.isInputChange(event) } />
                             </div>
                             <div className="form-group">
-                                <input type="email" name="txtEmail" className="form-control" placeholder="E-mail" onChange = { (event) => this.isInputChange(event) } />
+                                <input type="email" name="txtEmail" value={this.state.txtEmail} className="form-control" placeholder="E-mail" onChange = { (event) => this.isInputChange(event) } />
                             </div>
                             <div className="form-group">
-                                <input type="tel" name="txtPhone" placeholder="Phone" onChange = { (event) => this.isInputChange(event) } />
+                                <input type="tel" name="txtPhone" value={this.state.txtPhone} className="form-control" placeholder="Phone" onChange = { (event) => this.isInputChange(event) } />
                             </div>
                             <div className="form-group">
-                                <textarea name="txtMessage" rows={3} placeholder="Message" defaultValue={""} onChange = { (event) => this.isInputChange(event) } />
+                                <textarea name="txtMessage" defaultValue={this.state.txtMessage} rows={3} className="form-control" placeholder="Message" defaultValue={""} onChange = { (event) => this.isInputChange(event) } />
+                            </div>
+                            <div className="form-group">
+                                <select name="sltCity" value={this.state.sltcity} className="form-control" onChange = { (event) => this.isInputChange(event) } >
+                                    <option value="">Vui lòng chọn thành phố</option>
+                                    <option value="hn">Hà Nội</option>
+                                    <option value="dn">Đà Nẵng</option>
+                                    <option value="hcm">Hồ Chí Minh</option>
+                                </select>
+                            </div>
+                            <div className="form-group">
+                                <label className="checkbox-inline"><input name="chkSubject" type="checkbox" value="php" /> PHP </label>
+                                <label className="checkbox-inline"><input name="chkSubject" type="checkbox" value="android" /> Android </label>
+                                <label className="checkbox-inline"><input name="chkSubject" type="checkbox" value="ios" /> iOS - Swift </label>
+                                <label className="checkbox-inline"><input name="chkSubject" type="checkbox" value="asp" /> ASP </label>
+                            </div>
+                            <div className="form-group">
+                                <label className="radio-inline"><input type="radio" name="rdoGioiTinh" value="1" defaultChecked />Nam</label>
+                                <label className="radio-inline"><input type="radio" name="rdoGioiTinh" value="2" />Nữ</label>
+                            </div>
+                            <div className="form-group">
+                                <label className="custom-file">
+                                    <input type="file" id="file" className="custom-file-input" />
+                                    <span className="custom-file-control"></span>
+                                </label>
                             </div>
                             <button className="btn btn-default" type="submit" name="button">
                                 <i className="fa fa-paper-plane-o" aria-hidden="true" /> Submit
