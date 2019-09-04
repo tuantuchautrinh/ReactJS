@@ -76,27 +76,29 @@ class Contact extends Component {
             isRedirect : false
         });
 
+        const { txtName, txtEmail, txtPhone, txtMessage, sltCity, file, rdoGioiTinh, chkSubject } = this.state
+
         var gioitinh = '';
-        if(parseInt(this.state.rdoGioiTinh, 10) === 1) {
+        if(parseInt(rdoGioiTinh, 10) === 1) {
             gioitinh = 'Nam';
         } else {
             gioitinh = 'Nữ';
         }
 
         var monhoc = '';
-        for(const mh of this.state.chkSubject) {
+        for(const mh of chkSubject) {
             monhoc += mh + ",";
         }
 
         var content = '';
-        content += 'Họ tên : ' + this.state.txtName;
-        content += ' - Email : ' + this.state.txtEmail;
-        content += ' - Phone : ' + this.state.txtPhone;
-        content += ' - Message : ' + this.state.txtMessage;
-        content += ' - City : ' + this.state.sltCity;
+        content += 'Họ tên : ' + txtName;
+        content += ' - Email : ' + txtEmail;
+        content += ' - Phone : ' + txtPhone;
+        content += ' - Message : ' + txtMessage;
+        content += ' - City : ' + sltCity;
         content += ' - Sex : ' + gioitinh;
         content += ' - Subject : ' + monhoc;
-        content += ' - File : ' + this.state.file;
+        content += ' - File : ' + file;
 
         console.log(content);
     }
