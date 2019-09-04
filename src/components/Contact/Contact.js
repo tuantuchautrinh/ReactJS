@@ -61,6 +61,10 @@ class Contact extends Component {
         });
     }
 
+    isFileChange = (event) => {
+        console.log(event.target.files[0]);
+    }
+
     submitForm = (event) => {
         event.preventDefault();
         event.target.reset();
@@ -143,7 +147,7 @@ class Contact extends Component {
                             </div>
                             <div className="form-group">
                                 <label className="custom-file">
-                                    <input type="file" id="file" className="custom-file-input" />
+                                    <input type="file" id="file" className="custom-file-input" name="fAvatar" onChange={ (event) => this.isFileChange(event) } />
                                     <span className="custom-file-control"></span>
                                 </label>
                             </div>
