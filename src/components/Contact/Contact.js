@@ -78,7 +78,7 @@ class Contact extends Component {
                                 <input type="tel" name="txtPhone" value={this.state.txtPhone} className="form-control" placeholder="Phone" onChange = { (event) => this.isInputChange(event) } />
                             </div>
                             <div className="form-group">
-                                <textarea name="txtMessage" defaultValue={this.state.txtMessage} rows={3} className="form-control" placeholder="Message" defaultValue={""} onChange = { (event) => this.isInputChange(event) } />
+                                <textarea name="txtMessage" defaultValue={this.state.txtMessage} rows={3} className="form-control" placeholder="Message" onChange = { (event) => this.isInputChange(event) } />
                             </div>
                             <div className="form-group">
                                 <select name="sltCity" value={this.state.sltCity} className="form-control" onChange = { (event) => this.isInputChange(event) } >
@@ -95,8 +95,8 @@ class Contact extends Component {
                                 <label className="checkbox-inline"><input name="chkSubject" type="checkbox" value="asp" /> ASP </label>
                             </div>
                             <div className="form-group">
-                                <label className="radio-inline"><input type="radio" name="rdoGioiTinh" value="1" onChange = { (event) => this.isInputChange(event) } checked = { this.state.checked === 1 } />Nam</label>
-                                <label className="radio-inline"><input type="radio" name="rdoGioiTinh" value="2" onChange = { (event) => this.isInputChange(event) } checked = { this.state.checked === 2 } />Nữ</label>
+                                <label className="radio-inline"><input type="radio" name="rdoGioiTinh" value="1" onChange = { (event) => this.isInputChange(event) } checked = { parseInt(this.state.rdoGioiTinh, 10) === 1 } />Nam</label>
+                                <label className="radio-inline"><input type="radio" name="rdoGioiTinh" value="2" onChange = { (event) => this.isInputChange(event) } checked = { parseInt(this.state.rdoGioiTinh, 10) === 2 } />Nữ</label>
                             </div>
                             <div className="form-group">
                                 <label className="custom-file">
