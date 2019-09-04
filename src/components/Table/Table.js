@@ -4,7 +4,7 @@ import TableRow from './TableRow';
 class Table extends Component {
     
     showButton = () => {
-        if(this.props.statusForm) {
+        if(!this.props.statusForm) {
             return <a className="btn btn-success btn-sm" href="them" role="button" onClick={ (event) => this.props.formToogle(event) } ><i className="fa fa-plus" aria-hidden="true" /> Thêm</a>
         } else {
             return <a className="btn btn-danger btn-sm" href="dong" role="button"  ><i className="fa fa-close" aria-hidden="true" /> Đóng</a>
