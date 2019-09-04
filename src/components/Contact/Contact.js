@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Prompt, Redirect } from "react-router-dom";
 
+const subject = [
+    "PHP",
+    "ASP",
+    "Swift",
+    "Android"
+]
+
 class Contact extends Component {
     constructor(props) {
         super(props);
@@ -12,8 +19,34 @@ class Contact extends Component {
             txtPhone : '',
             txtMessage : '',
             sltCity : 'hn',
-            rdoGioiTinh : 1
+            rdoGioiTinh : 1,
+            chkSubject : new Set()
         };
+    }
+
+    checkboxSubject = () => {
+        const monhoc = subject.map((value, key) => {
+            return <label className="checkbox-inline" key={ key }><input name="chkSubject" type="checkbox" value={ value } onChange={ () => this.checkedSubject(value) } checked={ this.state.chkSubject.has(value) } /> { value } </label>
+        });
+        return monhoc;
+    }
+
+    componentWillMount() {
+        this.checkedCheckbox = new Set();
+    }
+
+    checkedSubject = (monhoc) => {
+        if(this.checkedCheckbox.has(monhoc)) {
+            this.checkedCheckbox.delete(monhoc);
+        } else {
+            this.checkedCheckbox.add(monhoc);
+        }
+
+        this.setState({
+            chkSubject : this.checkedCheckbox
+        });
+
+        console.log(this.state.chkSubject);
     }
 
     isInputChange = (event) => {
@@ -36,13 +69,26 @@ class Contact extends Component {
             isRedirect : false
         });
 
+        var gioitinh = '';
+        if(parseInt(this.state.rdoGioiTinh, 10) === 1) {
+            gioitinh = 'Nam';
+        } else {
+            gioitinh = 'Nữ';
+        }
+
+        var monhoc = '';
+        for(const mh of this.state.chkSubject) {
+            monhoc += mh + ",";
+        }
+
         var content = '';
         content += 'Họ tên : ' + this.state.txtName;
         content += ' - Email : ' + this.state.txtEmail;
         content += ' - Phone : ' + this.state.txtPhone;
         content += ' - Message : ' + this.state.txtMessage;
         content += ' - City : ' + this.state.sltCity;
-        content += ' - Sex : ' + this.state.rdoGioiTinh;
+        content += ' - Sex : ' + gioitinh;
+        content += ' - Subject : ' + monhoc;
 
         console.log(content);
     }
@@ -69,19 +115,19 @@ class Contact extends Component {
                         <h4><strong>Get in Touch</strong></h4>
                         <form onSubmit = { (event) => this.submitForm(event) }>
                             <div className="form-group">
-                                <input type="text" name="txtName" value={this.state.txtName} className="form-control" placeholder="Name" onChange = { (event) => this.isInputChange(event) } />
+                                <input type="text" name="txtName" value={this.state.txtName} className="form-control" placeholder="Name" onChange={ (event) => this.isInputChange(event) } />
                             </div>
                             <div className="form-group">
-                                <input type="email" name="txtEmail" value={this.state.txtEmail} className="form-control" placeholder="E-mail" onChange = { (event) => this.isInputChange(event) } />
+                                <input type="email" name="txtEmail" value={this.state.txtEmail} className="form-control" placeholder="E-mail" onChange={ (event) => this.isInputChange(event) } />
                             </div>
                             <div className="form-group">
-                                <input type="tel" name="txtPhone" value={this.state.txtPhone} className="form-control" placeholder="Phone" onChange = { (event) => this.isInputChange(event) } />
+                                <input type="tel" name="txtPhone" value={this.state.txtPhone} className="form-control" placeholder="Phone" onChange={ (event) => this.isInputChange(event) } />
                             </div>
                             <div className="form-group">
-                                <textarea name="txtMessage" defaultValue={this.state.txtMessage} rows={3} className="form-control" placeholder="Message" onChange = { (event) => this.isInputChange(event) } />
+                                <textarea name="txtMessage" defaultValue={this.state.txtMessage} rows={3} className="form-control" placeholder="Message" onChange={ (event) => this.isInputChange(event) } />
                             </div>
                             <div className="form-group">
-                                <select name="sltCity" value={this.state.sltCity} className="form-control" onChange = { (event) => this.isInputChange(event) } >
+                                <select name="sltCity" value={this.state.sltCity} className="form-control" onChange={ (event) => this.isInputChange(event) } >
                                     <option value="">Vui lòng chọn thành phố</option>
                                     <option value="hn">Hà Nội</option>
                                     <option value="dn">Đà Nẵng</option>
@@ -89,14 +135,11 @@ class Contact extends Component {
                                 </select>
                             </div>
                             <div className="form-group">
-                                <label className="checkbox-inline"><input name="chkSubject" type="checkbox" value="php" /> PHP </label>
-                                <label className="checkbox-inline"><input name="chkSubject" type="checkbox" value="android" /> Android </label>
-                                <label className="checkbox-inline"><input name="chkSubject" type="checkbox" value="ios" /> iOS - Swift </label>
-                                <label className="checkbox-inline"><input name="chkSubject" type="checkbox" value="asp" /> ASP </label>
+                                { this.checkboxSubject() }
                             </div>
                             <div className="form-group">
-                                <label className="radio-inline"><input type="radio" name="rdoGioiTinh" value="1" onChange = { (event) => this.isInputChange(event) } checked = { parseInt(this.state.rdoGioiTinh, 10) === 1 } />Nam</label>
-                                <label className="radio-inline"><input type="radio" name="rdoGioiTinh" value="2" onChange = { (event) => this.isInputChange(event) } checked = { parseInt(this.state.rdoGioiTinh, 10) === 2 } />Nữ</label>
+                                <label className="radio-inline"><input type="radio" name="rdoGioiTinh" value="1" onChange={ (event) => this.isInputChange(event) } checked={ parseInt(this.state.rdoGioiTinh, 10) === 1 } />Nam</label>
+                                <label className="radio-inline"><input type="radio" name="rdoGioiTinh" value="2" onChange={ (event) => this.isInputChange(event) } checked={ parseInt(this.state.rdoGioiTinh, 10) === 2 } />Nữ</label>
                             </div>
                             <div className="form-group">
                                 <label className="custom-file">
