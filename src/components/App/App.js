@@ -20,7 +20,7 @@ class App extends Component {
   changeStatusForm = (event) => {
     event.preventDefault();
     this.setState({
-      statusForm : true
+      statusForm : !this.state.statusForm
     });
   }
   
