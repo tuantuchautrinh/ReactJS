@@ -20,7 +20,8 @@ class Contact extends Component {
             txtMessage : '',
             sltCity : 'hn',
             rdoGioiTinh : 1,
-            chkSubject : new Set()
+            chkSubject : new Set(),
+            file : ''
         };
     }
 
@@ -62,7 +63,9 @@ class Contact extends Component {
     }
 
     isFileChange = (event) => {
-        console.log(event.target.files[0]);
+        this.setState({
+            file : event.target.files[0].name
+        });
     }
 
     submitForm = (event) => {
@@ -93,6 +96,7 @@ class Contact extends Component {
         content += ' - City : ' + this.state.sltCity;
         content += ' - Sex : ' + gioitinh;
         content += ' - Subject : ' + monhoc;
+        content += ' - File : ' + this.state.file;
 
         console.log(content);
     }
