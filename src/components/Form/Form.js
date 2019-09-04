@@ -13,7 +13,7 @@ class Form extends Component {
                 <div className="card">
                     <div className="card-header">
                         Thêm
-                        <button type="button" className="close" aria-label="Close">
+                        <button type="button" className="close" aria-label="Close" onClick={ (event) => this.props.formToogle(event) } >
                             <span aria-hidden="true">×</span>
                         </button>
                     </div>

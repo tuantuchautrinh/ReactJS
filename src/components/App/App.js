@@ -13,7 +13,7 @@ class App extends Component {
 
   showForm = () => {
     if(this.state.statusForm) {
-      return <Form />
+      return <Form formToogle={ (event) => this.changeStatusForm(event) } />
     }
   }
 
