@@ -11,9 +11,17 @@ class Table extends Component {
         }
     }
 
+    classTable = () => {
+        if(!this.props.statusForm) {
+            return "col-xs-12 col-sm-12 col-md-12 col-lg-12"
+        } else {
+            return "col-xs-8 col-sm-8 col-md-8 col-lg-8"
+        }
+    }
+
     render() {
         return (
-            <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            <div className={ this.classTable() } >
                 <table className="table table-bordered table-hover">
                     <thead>
                         <tr>
