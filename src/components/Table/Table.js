@@ -21,7 +21,7 @@ class Table extends Component {
 
     mappingData = () => {
         const tableRow = this.props.usersData.map((value, key) => {
-            return <TableRow key={ key }></TableRow>
+            return <TableRow key={ key } index={ key } level={ value.level } >{ value.username }</TableRow>
         });
         return tableRow;
     }
