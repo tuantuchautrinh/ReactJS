@@ -6,7 +6,7 @@ class Form extends Component {
         this.state = {
             txtUser : '',
             txtPass : '',
-            sltLevel : ''
+            sltLevel : 1
         };
     }
 
@@ -21,7 +21,7 @@ class Form extends Component {
     }
 
     submitForm = (event) => {
-        event.preventDefault();        
+        event.preventDefault();
         const { txtUser, txtPass, sltLevel } = this.state;
 
         let content = '';
@@ -44,7 +44,7 @@ class Form extends Component {
                 <div className="card">
                     <div className="card-header">
                         Thêm
-                        <button type="button" className="close" aria-label="Close" onClick={ (event) => this.props.formToogle(event) } >
+                        <button type="button" className="close" aria-label="Close" onClick={ (e) => this.props.formToogle(e) } >
                             <span aria-hidden="true">×</span>
                         </button>
                     </div>
@@ -52,15 +52,15 @@ class Form extends Component {
                         <form method="POST" onClick={ (event) => this.submitForm(event) } >
                             <div className="form-group">
                                 <label htmlFor="txtUser">Thành Viên</label>
-                                <input type="text" name="txtUser" className="form-control" placeholder="Nhập Thành Viên" />
+                                <input type="text" name="txtUser" className="form-control" placeholder="Nhập Thành Viên" onChange={ (event) => this.changeInput(event) } />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="txtPass">Mật Khẩu</label>
-                                <input type="password" name="txtPass" className="form-control" placeholder="Nhập Mật Khẩu" />
+                                <input type="password" name="txtPass" className="form-control" placeholder="Nhập Mật Khẩu" onChange={ (event) => this.changeInput(event) } />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="sltLevel">Quyền</label>
-                                <select className="form-control" name="sltLevel">
+                                <select className="form-control" name="sltLevel" value={ this.state.sltLevel } onChange={ (event) => this.changeInput(event) } >
                                     <option value={1}>Quản Trị Viên</option>
                                     <option value={2}>Thành Viên</option>
                                 </select>
