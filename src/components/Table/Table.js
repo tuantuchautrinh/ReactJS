@@ -19,6 +19,13 @@ class Table extends Component {
         }
     }
 
+    mappingData = () => {
+        const tableRow = this.props.usersData.map((value, key) => {
+            return <TableRow />
+        });
+        return tableRow;
+    }
+
     render() {
         return (
             <div className={ this.classTable() } >
@@ -34,7 +41,7 @@ class Table extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <TableRow />
+                        { this.mappingData() }
                     </tbody>
                 </table>
             </div>
