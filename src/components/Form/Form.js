@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+const uuidv4 = require('uuid/v4');
 
 class Form extends Component {
     constructor(props) {
@@ -25,7 +26,7 @@ class Form extends Component {
         const { txtUser, txtPass, sltLevel } = this.state;
 
         const item = {};
-        item.id = 11;
+        item.id = uuidv4();
         item.username = txtUser;
         item.password = txtPass;
         item.level = parseInt(sltLevel, 10);
