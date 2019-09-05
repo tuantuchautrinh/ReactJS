@@ -15,7 +15,7 @@ class App extends Component {
 
   showForm = () => {
     if(this.state.statusForm) {
-      return <Form formToogle={ (event) => this.changeStatusForm(event) } />
+      return <Form formToogle={ (event) => this.changeStatusForm(event) } add={ (item) => this.addAction(item) } />
     }
   }
 
@@ -23,6 +23,13 @@ class App extends Component {
     event.preventDefault();
     this.setState({
       statusForm : !this.state.statusForm
+    });
+  }
+
+  addAction = (item) => {
+    this.state.usersData.push(item);
+    this.setState({
+      usersData : this.state.usersData
     });
   }
 

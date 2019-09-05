@@ -32,6 +32,8 @@ class Form extends Component {
         item.level = parseInt(sltLevel, 10);
 
         console.log(item);
+
+        this.props.add(item);
     }
 
     render() {
