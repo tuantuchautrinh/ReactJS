@@ -1,6 +1,37 @@
 import React, { Component } from 'react';
 
 class Form extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            txtUser : '',
+            txtPass : '',
+            sltLevel : ''
+        };
+    }
+
+    changeInput = (event) => {
+        const target = event.target;
+        const name = target.name;
+        const value = target.value;
+
+        this.setState({
+            [name] : value
+        });
+    }
+
+    submitForm = (event) => {
+        event.preventDefault();        
+        const { txtUser, txtPass, sltLevel } = this.state;
+
+        let content = '';
+        content += 'User : ' + txtUser;
+        content += ' - Pass : ' + txtPass;
+        content += ' - Level : ' + sltLevel;
+
+        console.log(content);
+    }
+
     render() {
         return (
             <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
@@ -18,18 +49,18 @@ class Form extends Component {
                         </button>
                     </div>
                     <div className="card-block">
-                        <form method="POST">
+                        <form method="POST" onClick={ (event) => this.submitForm(event) } >
                             <div className="form-group">
                                 <label htmlFor="txtUser">Thành Viên</label>
-                                <input type="text" className="form-control" placeholder="Nhập Thành Viên" />
+                                <input type="text" name="txtUser" className="form-control" placeholder="Nhập Thành Viên" />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="txtPass">Mật Khẩu</label>
-                                <input type="password" className="form-control" placeholder="Nhập Mật Khẩu" />
+                                <input type="password" name="txtPass" className="form-control" placeholder="Nhập Mật Khẩu" />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="sltLevel">Quyền</label>
-                                <select className="form-control">
+                                <select className="form-control" name="sltLevel">
                                     <option value={1}>Quản Trị Viên</option>
                                     <option value={2}>Thành Viên</option>
                                 </select>
