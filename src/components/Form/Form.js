@@ -24,12 +24,13 @@ class Form extends Component {
         event.preventDefault();
         const { txtUser, txtPass, sltLevel } = this.state;
 
-        let content = '';
-        content += 'User : ' + txtUser;
-        content += ' - Pass : ' + txtPass;
-        content += ' - Level : ' + sltLevel;
+        const item = {};
+        item.id = 11;
+        item.username = txtUser;
+        item.password = txtPass;
+        item.level = parseInt(sltLevel, 10);
 
-        console.log(content);
+        console.log(item);
     }
 
     render() {
