@@ -23,6 +23,7 @@ class Form extends Component {
 
     submitForm = (event) => {
         event.preventDefault();
+        event.target.reset();
         const { txtUser, txtPass, sltLevel } = this.state;
 
         const item = {};
@@ -53,7 +54,7 @@ class Form extends Component {
                         </button>
                     </div>
                     <div className="card-block">
-                        <form method="POST" onClick={ (event) => this.submitForm(event) } >
+                        <form method="POST" onSubmit={ (event) => this.submitForm(event) } >
                             <div className="form-group">
                                 <label htmlFor="txtUser">Thành Viên</label>
                                 <input type="text" name="txtUser" className="form-control" placeholder="Nhập Thành Viên" onChange={ (event) => this.changeInput(event) } />
