@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
 import Table from '../Table/Table';
 import Form from '../Form/Form';
+import myData from '../Table/data.json';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      statusForm : false
+      statusForm : false,
+      usersData : myData
     };
   }
 
@@ -25,6 +27,8 @@ class App extends Component {
   }
   
   render() {
+    console.log(this.state.usersData);
+
     return (
       <div className="App">
         <div className="container">
