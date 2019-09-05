@@ -69,6 +69,18 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 ## npm start error with create-react-app
 
-### 1.`npm install -g npm@latest to update npm because it is sometimes buggy.`
-### 2.`rm -rf node_modules to remove the existing modules.`
-### 3.`npm install to re-install the project dependencies.`
+### 1.`npm install -g npm@latest` to update npm because it is sometimes buggy.
+### 2.`rm -rf node_modules` to remove the existing modules.
+### 3.`npm install` to re-install the project dependencies.
+
+## Get started in seconds
+
+### To create a project called `my-app`, run this command: `npx create-react-app my-app`
+
+## Easy to maintain
+
+### `npm install react-scripts@latest`
+
+## Documentation
+
+### References https://github.com/facebook/create-react-app
