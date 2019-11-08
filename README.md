@@ -93,3 +93,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 ### 1. Reactjs code snippets `ext install xabikos.ReactSnippets` https://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets
 
+### 2. ReactJS, Redux & React Router snippets `ext install ugross.vscode-react-snippets` https://marketplace.visualstudio.com/items?itemName=ugross.vscode-react-snippets
