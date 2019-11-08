@@ -84,3 +84,12 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 ## Documentation
 
 ### References https://github.com/facebook/create-react-app
+
+## Tools
+
+### React Developer Tools: https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi
+
+### Launch VS Code Quick Open (Ctrl+P)
+
+### 1. Reactjs code snippets `ext install xabikos.ReactSnippets` https://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets
+
